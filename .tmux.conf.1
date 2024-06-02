@@ -1,3 +1,4 @@
+# tmux version >= 2.2
 # clear bindings
 unbind C-b
 unbind '"'
@@ -9,6 +10,8 @@ set -g status off
 # https://manpages.ubuntu.com/manpages/trusty/man1/terminator.1.html
 bind -n C-M-E split-window -h
 bind -n C-M-O split-window -v
+bind -n C-M-A resize-pane -Z
+#bind-key -n F12 resize-pane -Z
 bind -n C-S-Left resize-pane -L 3
 bind -n C-S-Right resize-pane -R 3
 bind -n C-S-Up resize-pane -U 3
@@ -21,3 +24,4 @@ bind -n M-Up select-pane -U
 # mouse support for switching panes/windows
 set-option -gw xterm-keys on
 set -g mouse on
+set -g terminal-overrides 'xterm*:smcup@:rmcup@'
